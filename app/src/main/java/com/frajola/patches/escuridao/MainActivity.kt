@@ -2,6 +2,7 @@ package com.frajola.patches.escuridao
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.clickable
@@ -53,6 +54,8 @@ class MainActivity : ComponentActivity() {
 
                     val clientId = "your_web_client_inside_google_cloud"
 
+                    val context = LocalContext.current
+
                     val onClickGoogleSignIn = rememberGoogleSignUp(
                         clientId = clientId,
                         context = LocalContext.current,
@@ -60,6 +63,9 @@ class MainActivity : ComponentActivity() {
                             Log.d(AppTag, "id: ${result.id}" )
                             Log.d(AppTag, "email: ${result.email}" )
                             Log.d(AppTag, "name: ${result.displayName}" )
+                        },
+                        onError = {
+                            Toast.makeText(context, "Falha ao logar com Google ❌", Toast.LENGTH_SHORT).show()
                         }
                     )
 
@@ -74,9 +80,7 @@ class MainActivity : ComponentActivity() {
                             Button(onClick = onClickGoogleSignIn) {
                                 Text(text = "Enter with Google")
                             }
-
                         }
-
                     }
                 }
             }

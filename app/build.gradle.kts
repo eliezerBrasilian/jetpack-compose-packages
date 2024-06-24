@@ -51,8 +51,6 @@ android {
 
 dependencies {
     implementation("com.google.android.gms:play-services-auth:19.2.0")
-    /*implementation(project(":frajola:patches:brasilian_currency"))
-    implementation(project(":frajola:patches:google_sign_in"))*/
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

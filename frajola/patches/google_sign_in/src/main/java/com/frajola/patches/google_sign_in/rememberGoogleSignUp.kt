@@ -12,7 +12,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 fun rememberGoogleSignUp(
     clientId: String,
     context: Context,
-    onSuccess: (result: GoogleSignInAccount) -> Unit
+    onSuccess: (result: GoogleSignInAccount) -> Unit,
+    onError: () -> Unit
 ): () -> Unit {
     var showGoogleSignInPopUp by remember { mutableStateOf(false) }
 
@@ -23,7 +24,8 @@ fun rememberGoogleSignUp(
             onSuccess = { result ->
                 onSuccess(result)
                 showGoogleSignInPopUp = false
-            }
+            },
+            onError = onError
         )
     }
 

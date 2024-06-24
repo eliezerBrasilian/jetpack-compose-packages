@@ -13,7 +13,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 fun GoogleSignInPopUp(
     clientId: String,
     context: Context,
-    onSuccess: (result: GoogleSignInAccount) -> Unit
+    onSuccess: (result: GoogleSignInAccount) -> Unit,
+    onError: () -> Unit
 ) {
     val googleSignInClient = getGoogleLoginAuth(clientId, context)
     val startForResult =
@@ -27,6 +28,9 @@ fun GoogleSignInPopUp(
                         onSuccess(result)
                     }
                 }
+            }
+            else{
+                onError()
             }
         }
     LaunchedEffect(Unit) {
