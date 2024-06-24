@@ -51,9 +51,11 @@ android {
 
 dependencies {
 
+    implementation ("com.github.eliezerBrasilian:jetpack-compose-packages:v1.0.1")
+
     implementation("com.google.android.gms:play-services-auth:19.2.0")
-    implementation(project(":frajola:patches:brasilian_currency"))
-    implementation(project(":frajola:patches:google_sign_in"))
+    /*implementation(project(":frajola:patches:brasilian_currency"))
+    implementation(project(":frajola:patches:google_sign_in"))*/
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -63,6 +65,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(project(":frajola:patches:google_sign_in"))
+    implementation(project(":frajola:patches:brasilian_currency"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
