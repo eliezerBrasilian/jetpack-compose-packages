@@ -63,7 +63,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.eliezerBrasilian"
             artifactId = "brasilian-currency"
-            version = "1.0.0"
+            version = "1.0.6"
 
             afterEvaluate{
                 from(components["release"])

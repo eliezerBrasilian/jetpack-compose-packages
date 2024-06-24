@@ -22,7 +22,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Frajola-Patches"
 include(":app")
-include(":brasilian_currency")
-include(":google_sign_in")
 include(":frajola:patches:brasilian_currency")
 include(":frajola:patches:google_sign_in")

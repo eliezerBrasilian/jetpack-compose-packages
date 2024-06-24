@@ -10,12 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/brasilian_currency" />
             <option value="$PROJECT_DIR$/frajola" />
             <option value="$PROJECT_DIR$/frajola/patches" />
             <option value="$PROJECT_DIR$/frajola/patches/brasilian_currency" />
             <option value="$PROJECT_DIR$/frajola/patches/google_sign_in" />
-            <option value="$PROJECT_DIR$/google_sign_in" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
