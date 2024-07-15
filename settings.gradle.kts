@@ -26,3 +26,4 @@ rootProject.name = "Frajola-Patches"
 include(":app")
 include(":frajola:patches:brasilian_currency")
 include(":frajola:patches:google_sign_in")
+include(":frajola:patches:jetpack_compose_fresh_ads")

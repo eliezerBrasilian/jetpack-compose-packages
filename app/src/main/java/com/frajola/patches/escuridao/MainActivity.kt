@@ -30,11 +30,16 @@ import androidx.compose.ui.unit.dp
 import com.frajola.BrazilianCurrencyVisualTransformation
 import com.frajola.patches.escuridao.ui.theme.FrajolaPatchesTheme
 import com.frajola.patches.google_sign_in.rememberGoogleSignUp
+import com.frajola.patches.jetpack_compose_fresh_ads.loadInterstitial
+import com.frajola.patches.jetpack_compose_fresh_ads.showInterstitial
 
 val AppTag = "MyApp"
+val interstitialId = "ca-app-pub-3940256099942544/1033173712"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+            loadInterstitial(this,interstitialId)
+
         super.onCreate(savedInstanceState)
         setContent {
             FrajolaPatchesTheme {
@@ -71,20 +76,23 @@ class MainActivity : ComponentActivity() {
 
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
                         Column(verticalArrangement = Arrangement.spacedBy(10.dp)){
-                            TextField(
-                                value = valueInput,
-                                onValueChange = onValueInputChange,
-                                visualTransformation = BrazilianCurrencyVisualTransformation(),
-                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                            )
                             Button(onClick = onClickGoogleSignIn) {
                                 Text(text = "Enter with Google")
                             }
+
+                            Button(onClick = {
+                                showInterstitial(context, interstitialId)
+                            }) {
+                                Text(text = "Load Ads")
+                            }
                         }
                     }
+
+
                 }
             }
         }
     }
 }
+
 

@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(project(":frajola:patches:google_sign_in"))
     implementation(project(":frajola:patches:brasilian_currency"))
+    implementation(project(":frajola:patches:jetpack_compose_fresh_ads"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

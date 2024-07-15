@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/frajola/patches" />
             <option value="$PROJECT_DIR$/frajola/patches/brasilian_currency" />
             <option value="$PROJECT_DIR$/frajola/patches/google_sign_in" />
+            <option value="$PROJECT_DIR$/frajola/patches/jetpack_compose_fresh_ads" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
