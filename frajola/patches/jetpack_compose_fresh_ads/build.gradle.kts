@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("maven-publish")
 }
 
 android {
@@ -56,4 +57,19 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+}
+
+publishing {
+    publications {
+        // Creates a Maven publication called "release".
+        register<MavenPublication>("release") {
+            groupId = "com.github.eliezerBrasilian"
+            artifactId = "jetpack-compose-fresh-ads"
+            version = "1.0.0"
+
+            afterEvaluate{
+                from(components["release"])
+            }
+        }
+    }
 }

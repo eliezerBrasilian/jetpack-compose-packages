@@ -31,6 +31,7 @@ import com.frajola.BrazilianCurrencyVisualTransformation
 import com.frajola.patches.escuridao.ui.theme.FrajolaPatchesTheme
 import com.frajola.patches.google_sign_in.rememberGoogleSignUp
 import com.frajola.patches.jetpack_compose_fresh_ads.loadInterstitial
+import com.frajola.patches.jetpack_compose_fresh_ads.removeInterstitial
 import com.frajola.patches.jetpack_compose_fresh_ads.showInterstitial
 
 val AppTag = "MyApp"
@@ -92,6 +93,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        removeInterstitial()
     }
 }
 
